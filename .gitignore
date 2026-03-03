@@ -1,0 +1,9 @@
+# Bundler cache
+/.bundle/
+/vendor/bundle/
+/vendor/ruby/
+
+# Jekyll build directory
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata
