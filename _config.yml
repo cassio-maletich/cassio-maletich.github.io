@@ -1,0 +1,21 @@
+title: "Cássio Maletich — Senior Full-Stack Engineer"
+description: "Ruby on Rails · React · JavaScript · Scalable Systems"
+baseurl: ""
+url: ""
+
+author:
+  name: "Cássio Maletich"
+  title: "Senior Full-Stack Engineer"
+  github: "https://github.com/cassio-maletich"
+  linkedin: "https://linkedin.com/in/cassio-maletich"
+  email: "mailto:cassio.dev@proton.me"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules/
