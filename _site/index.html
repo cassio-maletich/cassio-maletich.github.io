@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Ruby on Rails · React · JavaScript · Scalable Systems" />
   <title>Cássio Maletich — Senior Full-Stack Engineer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png" />
+  <link rel="shortcut icon" href="/assets/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
+
 <body>
   <header class="site-header" id="site-header">
   <nav class="nav container">
@@ -22,6 +29,7 @@
       <li><a href="#skills" class="nav-link">Skills</a></li>
       <li><a href="#impact" class="nav-link">Impact</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
       <li><a href="https://github.com/cassio-maletich" class="nav-link nav-link--external" target="_blank"
           rel="noopener">GitHub</a></li>
       <li><a href="https://linkedin.com/in/cassio-maletich" class="nav-link nav-link--external" target="_blank"
@@ -74,10 +82,10 @@
         <h3 class="skill-title">Backend Engineering — Ruby on Rails</h3>
         <ul class="skill-list">
           <li>Architect scalable Rails applications</li>
+          <li>Payment systems &amp; subscription logic</li>
+          <li>API integrations (Amazon SP-API, DocuSign, Shopify, AI Vendors&hellip;)</li>
           <li>Refactor legacy codebases safely</li>
           <li>Background jobs (Sidekiq), Redis, concurrency</li>
-          <li>Payment systems &amp; subscription logic</li>
-          <li>API integrations (Amazon SP-API, DocuSign, USPS&hellip;)</li>
           <li>High test coverage (RSpec / TDD mindset)</li>
         </ul>
       </div>
@@ -122,19 +130,29 @@
 
     <div class="impact-grid">
       <div class="impact-item fade-in">
-        Reduced hidden checkout tax duplication in a Spree-based e-commerce flow, improving trust and revenue accuracy.
+        Found and fixed hidden checkout tax duplication in a Spree-based e-commerce flow, improving trust and revenue
+        accuracy.
       </div>
       <div class="impact-item fade-in">
-        Built a native app MVP in 45 days after previous vendor failure — on time, production-ready.
+        Identified and resolved a race condition causing duplicate shipment records during checkout — traced parallel
+        service
+        calls, implemented idempotency safeguards, and restored order integrity.
+      </div>
+      <div class="impact-item fade-in">
+        Led AI-powered scraping &amp; document intelligence platform for investors: automated data extraction,
+        classification, and
+        dashboard insights from unstructured financial documents.
+      </div>
+      <div class="impact-item fade-in">
+        Built a native app MVP in 45 days after previous vendor failure — mastered React Native on the fly and delivered
+        production-ready.
+      </div>
+      <div class="impact-item fade-in">
+        Developed a subscription gifting system integrated in the previous flow serving <strong>30k+ concurrent Shopify
+          users</strong>.
       </div>
       <div class="impact-item fade-in">
         Migrated Amazon Marketplace API → Selling Partner API while preserving full compliance and zero downtime.
-      </div>
-      <div class="impact-item fade-in">
-        Developed a subscription gifting system serving <strong>30k+ concurrent Shopify users</strong>.
-      </div>
-      <div class="impact-item fade-in">
-        Led AI-powered scraping &amp; document intelligence platform for investors.
       </div>
     </div>
   </div>
@@ -184,7 +202,7 @@
       <h2 class="contact-title">Let's build something that scales.</h2>
       <p class="contact-desc">Open to challenging projects, consulting, and senior engineering roles.</p>
       <div class="contact-buttons">
-        <a href="mailto:cassio@example.com" class="btn btn-primary">Contact Me</a>
+        <a href="mailto:cassio.dev@proton.me" class="btn btn-primary">Contact Me</a>
         <a href="https://github.com/cassio-maletich" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
         <a href="https://linkedin.com/in/cassio-maletich" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
       </div>
@@ -198,7 +216,7 @@
     <nav class="footer-links">
       <a href="https://github.com/cassio-maletich" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/cassio-maletich" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:cassio@example.com">Contact</a>
+      <a href="mailto:cassio.dev@proton.me">Contact</a>
     </nav> -->
     <p class="footer-copy">&copy; 2026 Cássio Maletich. Built with Jekyll.</p>
   </div>
@@ -239,4 +257,5 @@
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
+
 </html>
