@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ruby on Rails · React · JavaScript · Scalable Systems" />
+  <title>Developing an MVP for Legal Contract Assignment</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.png" />
+  <link rel="shortcut icon" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body>
+  <header class="site-header" id="site-header">
+  <nav class="nav container">
+    <a href="#hero" class="nav-logo">CM</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#impact" class="nav-link">Impact</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="/portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="https://github.com/cassio-maletich" class="nav-link nav-link--external" target="_blank"
+          rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/cassio-maletich" class="nav-link nav-link--external" target="_blank"
+          rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+</header>
+  <main>
+    <div class="post-breadcrumb">
+  <div class="container">
+    <span class="breadcrumb-trail">
+      <a href="/portfolio" class="breadcrumb-link">Portfolio</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current">Developing an MVP for Legal Contract Assignment</span>
+    </span>
+  </div>
+</div>
+
+<article class="post-article">
+  <div class="container">
+    <header class="post-header">
+      <span class="portfolio-year">2023</span>
+      <h1 class="post-title">Developing an MVP for Legal Contract Assignment</h1>
+      <time class="post-date" datetime="2023-12-04T12:34:56-03:00">
+        December 2023
+      </time>
+    </header>
+
+    <div class="post-body">
+      <h1 id="its-better-to-be-safe-than-sorry">It’s better to be safe than sorry</h1>
+<p>I developed a minimum viable product (MVP) for a startup aimed at simplifying the process for investors to assign legally binding contracts. Leveraging the DocuSign API and Ruby on Rails, our team created a robust platform that streamlined contract assignment workflows.</p>
+
+<p>The MVP allowed investors to securely and efficiently manage contract assignments, ensuring compliance and legal validity through integration with the DocuSign API. This involved developing custom features and interfaces tailored to the specific needs of investors and legal requirements.</p>
+
+<p>By combining my expertise in Ruby on Rails development with the powerful capabilities of the DocuSign API, we delivered a solution that empowered users to handle legal contracts with confidence and ease. This project underscored my ability to conceptualize, develop, and deploy innovative solutions that meet critical business needs.</p>
+
+    </div>
+
+    <footer class="post-footer">
+      <a href="/portfolio" class="btn btn-outline post-back-link">
+        ← Back to Portfolio
+      </a>
+    </footer>
+  </div>
+</article>
+  </main>
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <!-- <p class="footer-name">Cássio Maletich</p>
+    <nav class="footer-links">
+      <a href="https://github.com/cassio-maletich" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/cassio-maletich" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:cassio.dev@proton.me">Contact</a>
+    </nav> -->
+    <p class="footer-copy">&copy; 2026 Cássio Maletich. Built with Jekyll.</p>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.classList.remove('active');
+    });
+  });
+
+  // Intersection observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+
+</html>

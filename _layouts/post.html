@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="post-breadcrumb">
+  <div class="container">
+    <span class="breadcrumb-trail">
+      <a href="/portfolio" class="breadcrumb-link">Portfolio</a>
+      <span class="breadcrumb-sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-current">{{ page.title }}</span>
+    </span>
+  </div>
+</div>
+
+<article class="post-article">
+  <div class="container">
+    <header class="post-header">
+      <span class="portfolio-year">{{ page.date | date: "%Y" }}</span>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %Y" }}
+      </time>
+    </header>
+
+    <div class="post-body">
+      {{ content }}
+    </div>
+
+    <footer class="post-footer">
+      <a href="/portfolio" class="btn btn-outline post-back-link">
+        ← Back to Portfolio
+      </a>
+    </footer>
+  </div>
+</article>

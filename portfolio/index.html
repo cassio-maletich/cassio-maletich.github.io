@@ -1,0 +1,45 @@
+---
+layout: default
+title: "Portfolio — Cássio Maletich"
+---
+
+<section class="portfolio-hero">
+  <div class="container">
+    <p class="section-label">Selected Work</p>
+    <h1 class="section-title">Case Studies</h1>
+    <p class="section-desc">
+      A curated look at projects where I solved real problems — from complex migrations
+      and high-scale systems to MVPs built against the odds.
+    </p>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<section class="portfolio-list">
+  <div class="container">
+    <div class="portfolio-grid">
+      {% assign posts = site.categories.cases | sort: "date" | reverse %}
+      {% for post in posts %}
+      <article class="portfolio-card fade-in">
+        <div class="portfolio-card-header">
+          <span class="portfolio-year">{{ post.date | date: "%Y" }}</span>
+        </div>
+        <h2 class="portfolio-card-title">{{ post.title }}</h2>
+        <p class="portfolio-card-excerpt">{{ post.content | strip_html | truncatewords: 32 }}</p>
+        <a href="{{ post.url | relative_url }}" class="portfolio-read-link">
+          Read case <span aria-hidden="true">→</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
