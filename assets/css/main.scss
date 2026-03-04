@@ -317,17 +317,73 @@ section {
   font-family: var(--font-mono);
   font-size: 0.9rem;
   color: var(--text-muted);
-  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 5px 14px;
-  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-tag::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250%;
+  aspect-ratio: 1;
+  background: conic-gradient(from 0deg,
+      transparent 0%,
+      transparent 40%,
+      var(--accent-2) 45%,
+      var(--accent) 50%,
+      transparent 55%,
+      transparent 90%,
+      var(--accent-2) 95%,
+      var(--accent) 100%);
+  transform: translate(-50%, -50%);
+  z-index: -2;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.stack-tag::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--surface);
+  border-radius: calc(var(--radius-sm) - 1px);
+  z-index: -1;
+  transition: background var(--transition);
 }
 
 .stack-tag:hover {
-  color: var(--accent);
-  border-color: rgba(99, 102, 241, 0.5);
-  background: rgba(99, 102, 241, 0.08);
+  color: var(--text);
+  border-color: transparent;
+  transform: translateY(-1px);
+}
+
+.stack-tag:hover::before {
+  opacity: 1;
+  animation: spin-border-rev 2s linear infinite;
+}
+
+@keyframes spin-border-rev {
+  0% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.stack-tag:hover::after {
+  background: var(--surface-alt);
 }
 
 .hero-tagline {
