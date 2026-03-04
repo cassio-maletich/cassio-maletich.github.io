@@ -4,6 +4,6 @@
 /vendor/ruby/
 
 # Jekyll build directory
-/_site/
+/_site
 /.jekyll-cache/
 /.jekyll-metadata
