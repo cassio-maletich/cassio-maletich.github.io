@@ -2,7 +2,7 @@
 layout: post
 title: "Leading the Development of a Native App for a Trade Fair"
 date: 2020-03-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # The Fair Deadline.

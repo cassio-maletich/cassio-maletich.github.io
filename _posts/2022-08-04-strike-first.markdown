@@ -2,7 +2,7 @@
 layout: post
 title: "Migrating to the Selling Partner API"
 date: 2022-08-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # Strike while the iron is hot.

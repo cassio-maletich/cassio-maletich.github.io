@@ -2,7 +2,7 @@
 layout: post
 title: "Developing an MVP for Legal Contract Assignment"
 date: 2023-12-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # It’s better to be safe than sorry.

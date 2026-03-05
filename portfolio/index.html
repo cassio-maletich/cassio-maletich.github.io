@@ -19,7 +19,7 @@ title: "Portfolio — Cássio Maletich"
 <section class="portfolio-list">
   <div class="container">
     <div class="portfolio-grid">
-      {% assign posts = site.categories.cases | sort: "date" | reverse %}
+      {% assign posts = site.categories.portfolio | sort: "date" | reverse %}
       {% for post in posts %}
       <article class="portfolio-card fade-in">
         <div class="portfolio-card-header">

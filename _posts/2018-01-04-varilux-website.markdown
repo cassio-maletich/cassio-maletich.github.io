@@ -2,7 +2,7 @@
 layout: post
 title: "First Technical Leading Project"
 date: 2018-01-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # Head first.

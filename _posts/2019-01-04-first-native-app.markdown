@@ -2,7 +2,7 @@
 layout: post
 title: "The Native App Project"
 date: 2019-01-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # Actions speak louder than words.

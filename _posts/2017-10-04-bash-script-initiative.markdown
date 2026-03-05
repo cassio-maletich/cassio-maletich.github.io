@@ -2,7 +2,7 @@
 layout: post
 title: "Automating HTML Newsletter Generation"
 date: 2017-10-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # The Bash Script Initiative.

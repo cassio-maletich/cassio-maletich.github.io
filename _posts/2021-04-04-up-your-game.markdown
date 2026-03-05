@@ -2,7 +2,7 @@
 layout: post
 title: "Working on a Massive App with Thousands of Concurrent Users"
 date: 2021-05-04 12:34:56 -0300
-categories: cases
+categories: portfolio
 ---
 
 # Up your Game.
