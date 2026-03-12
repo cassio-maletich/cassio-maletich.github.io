@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Restoring Integrity to the Shipment Creation Pipeline"
-date:   2025-04-01 12:00:00 -0300
+date:   2025-01-04 12:00:00 -0300
 categories: portfolio
 ---
 # Ghost packages don’t scale.

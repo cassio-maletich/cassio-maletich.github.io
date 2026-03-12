@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Resolving Lifecycle Collisions in Spree’s Order Pipeline"
-date:   2025-04-12 12:00:00 -0300
+date:   2025-12-04 12:00:00 -0300
 categories: portfolio
 ---
 # When taxes are calculated twice, nobody wins.
