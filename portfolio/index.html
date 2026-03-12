@@ -8,8 +8,8 @@ title: "Portfolio — Cássio Maletich"
     <p class="section-label">Selected Work</p>
     <h1 class="section-title">Case Studies</h1>
     <p class="section-desc">
-      A curated look at projects where I solved real problems — from complex migrations
-      and high-scale systems to MVPs built against the odds.
+      A selection of projects where I solved real problems, from complex migrations 
+      and high scale systems to MVPs delivered under tight constraints.
     </p>
   </div>
 </section>
@@ -23,7 +23,7 @@ title: "Portfolio — Cássio Maletich"
       {% for post in posts %}
       <article class="portfolio-card fade-in">
         <div class="portfolio-card-header">
-          <span class="portfolio-year">{{ post.date | date: "%Y" }}</span>
+          <span class="portfolio-year">{{ post.date | date: "%B, %Y" }}</span>
         </div>
         <h2 class="portfolio-card-title">{{ post.title }}</h2>
         <p class="portfolio-card-excerpt">{{ post.content | strip_html | truncatewords: 32 }}</p>
