@@ -6,8 +6,8 @@ categories: portfolio
 ---
 # When taxes are calculated twice, nobody wins.
 
-Checkout started behaving inconsistently in production — totals occasionally shifting in ways that didn’t make sense. After tracing the flow, I discovered we had introduced an internal ActiveRecord hook that called create_tax_charge! at the same time Spree was already calculating taxes inside its own checkout state machine. Nothing was obviously “wrong,” but two mechanisms were competing for authority over the same responsibility.
+Checkout started behaving inconsistently in production. Totals would sometimes change in ways that didn’t make sense. After tracing the flow, I found that we had added an internal ActiveRecord hook that called create_tax_charge! while Spree was already calculating taxes inside its own checkout state machine. Nothing looked obviously wrong at first, but two different pieces of logic were trying to control the same thing.
 
-The real challenge wasn’t removing a duplicate call — it was understanding lifecycle timing. Spree’s tax logic runs as part of state transitions, tightly coupled to recalculation steps. Our custom hook was technically valid, but it ignored the deeper orchestration happening under the hood. I stepped through the full transition chain, mapped execution order, and identified exactly where the collision occurred.
+The real challenge wasn’t just removing a duplicate call. It was understanding when everything in the lifecycle actually runs. Spree’s tax logic happens during state transitions and is closely tied to recalculation steps. Our custom hook worked on its own, but it ignored the orchestration happening inside Spree. I stepped through the transition chain, mapped the execution order, and found where the overlap was happening.
 
-The fix wasn’t a patch — it was a structural realignment. I refactored the integration to respect Spree’s internal lifecycle rather than bypass it. After that, checkout totals became fully deterministic again. No race conditions. No silent duplicated data. Just one source of truth.
+The fix ended up being about aligning with how Spree already works. I refactored the integration so it used Spree’s lifecycle instead of running alongside it. After that, checkout totals became consistent again. No duplicated tax charges and no confusing shifts in totals.

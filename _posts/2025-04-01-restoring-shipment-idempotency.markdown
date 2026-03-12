@@ -6,8 +6,8 @@ categories: portfolio
 ---
 # Ghost packages don’t scale.
 
-We began seeing something that should have been impossible: duplicate shipments for single orders. Our domain logic explicitly prevented this, yet under certain edge conditions, two shipments were being created. It wasn’t frequent — which made it more dangerous.
+We started seeing something that should not happen: duplicate shipments for a single order. Our domain logic was supposed to prevent that, but under certain conditions two shipments were still being created. It didn’t happen often, which made it harder to spot and easier to miss.
 
-I audited the entire shipment generation pipeline inside Spree, tracing how state transitions, inventory units, and shipment builders interacted. The issue wasn’t a simple validation gap. It was a combination of timing and implicit framework behavior that allowed shipment creation to be triggered more than once when specific transitions overlapped.
+I went through the whole shipment generation flow in Spree, tracing how state transitions, inventory units, and the shipment builders interact. The problem was not just a missing validation. It came from timing and some implicit framework behavior that allowed shipment creation to run more than once when certain transitions overlapped.
 
-Rather than rely on surface-level guards, I implemented domain-level idempotency protections and tightened the shipment creation boundaries. After that, shipment generation became structurally safe instead of conditionally safe. One order. One shipment. Always.
+Instead of adding another guard on top, I added idempotency checks at the domain level and tightened where shipment creation can happen. After that, shipment generation became predictable. One order, one shipment, every time.
