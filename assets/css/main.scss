@@ -1226,7 +1226,7 @@ section {
   position: relative;
   border: none;
   padding: 0;
-  background: var(--surface);
+  background: var(--surface-alt, #0e1220); /* letterbox fill for portrait images */
   border-radius: var(--radius-sm);
   overflow: hidden;
   cursor: pointer;
@@ -1247,13 +1247,13 @@ section {
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;   /* show full image — no cropping */
   display: block;
   transition: transform 0.5s var(--transition);
 }
 
 .gallery-item:hover img {
-  transform: scale(1.06);
+  transform: scale(1.04); /* slightly less zoom since contain leaves breathing room */
 }
 
 .gallery-item-overlay {
