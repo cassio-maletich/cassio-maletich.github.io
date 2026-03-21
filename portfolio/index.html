@@ -25,7 +25,7 @@ title: "Portfolio — Cássio Maletich"
         <div class="portfolio-card-header">
           <span class="portfolio-year">{{ post.date | date: "%B, %Y" }}</span>
         </div>
-        <h2 class="portfolio-card-title">{{ post.title }}</h2>
+        <h2 class="portfolio-card-title"><a href="{{ post.url | relative_url }}" class="portfolio-card-title-link">{{ post.title }}</a></h2>
         <p class="portfolio-card-excerpt">{{ post.content | split: '<p>' | slice: 1, 1 | first | split: '</p>' | first | strip_html | truncatewords: 32 }}</p>
         <a href="{{ post.url | relative_url }}" class="portfolio-read-link">
           Read case <span aria-hidden="true">→</span>
