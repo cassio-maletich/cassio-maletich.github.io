@@ -10,6 +10,8 @@ gallery:
   - { file: "3.jpg", caption: "" }
   - { file: "4.jpg", caption: "" }
   - { file: "5.jpg", caption: "" }
+next_post_url: /portfolio/2019/01/04/first-native-app/
+next_post_title: "The Native App Project"
 ---
 
 # Head first.

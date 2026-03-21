@@ -3,6 +3,8 @@ layout: post
 title: "The Native App Project"
 date: 2019-01-04 12:34:56 -0300
 categories: portfolio
+next_post_url: /portfolio/2020/03/04/fair-deadline/
+next_post_title: "Leading the Development of a Native App for a Trade Fair"
 gallery_dir: posts/2019-01-04
 gallery:
   - { file: "1.jpg", caption: "" }

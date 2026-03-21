@@ -3,6 +3,8 @@ layout: post
 title: "Migrating to the Selling Partner API"
 date: 2022-08-04 12:34:56 -0300
 categories: portfolio
+next_post_url: /portfolio/2023/12/04/keep-friends-close/
+next_post_title: "Developing an MVP for Legal Contract Assignment"
 ---
 
 # Strike while the iron is hot.

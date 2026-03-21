@@ -3,6 +3,8 @@ layout: post
 title: "Leading the Development of a Native App for a Trade Fair"
 date: 2020-03-04 12:34:56 -0300
 categories: portfolio
+next_post_url: /portfolio/2021/05/04/up-your-game/
+next_post_title: "Working on a Massive App with Thousands of Concurrent Users"
 gallery_dir: posts/2020-03-04
 gallery:
   - { file: "1.png", caption: "" }

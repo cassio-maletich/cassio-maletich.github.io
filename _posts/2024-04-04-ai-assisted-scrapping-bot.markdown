@@ -3,6 +3,8 @@ layout: post
 title:  "Leading an AI-Powered Data Scraping Project"
 date:   2024-04-04 12:23:04 -0300
 categories: portfolio
+next_post_url: /portfolio/2025/01/04/restoring-shipment-idempotency/
+next_post_title: "Restoring Integrity to the Shipment Creation Pipeline"
 ---
 # The new frontier.
 

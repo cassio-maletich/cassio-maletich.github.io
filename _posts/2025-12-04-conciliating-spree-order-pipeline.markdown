@@ -3,6 +3,8 @@ layout: post
 title:  "Resolving Lifecycle Collisions in Spree’s Order Pipeline"
 date:   2025-12-04 12:00:00 -0300
 categories: portfolio
+next_post_url: /portfolio/2024/04/04/ai-assisted-scrapping-bot/
+next_post_title: "Leading an AI-Powered Data Scraping Project"
 ---
 # When taxes are calculated twice, nobody wins.
 

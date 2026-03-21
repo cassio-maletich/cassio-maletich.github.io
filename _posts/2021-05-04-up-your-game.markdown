@@ -3,6 +3,8 @@ layout: post
 title: "Working on a Massive App with Thousands of Concurrent Users"
 date: 2021-05-04 12:34:56 -0300
 categories: portfolio
+next_post_url: /portfolio/2022/08/04/strike-first/
+next_post_title: "Migrating to the Selling Partner API"
 ---
 
 # Up your Game.

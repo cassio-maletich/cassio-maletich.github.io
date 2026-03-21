@@ -3,6 +3,8 @@ layout: post
 title: "Developing an MVP for Legal Contract Assignment"
 date: 2023-12-04 12:34:56 -0300
 categories: portfolio
+next_post_url: /portfolio/2024/04/04/ai-assisted-scrapping-bot/
+next_post_title: "Leading an AI-Powered Data Scraping Project"
 ---
 
 # It’s better to be safe than sorry.

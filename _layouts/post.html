@@ -15,7 +15,6 @@ layout: default
 <article class="post-article">
   <div class="container">
     <header class="post-header">
-      <span class="portfolio-year">{{ page.date | date: "%Y" }}</span>
       <h1 class="post-title">{{ page.title }}</h1>
       <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
         {{ page.date | date: "%B %Y" }}
@@ -34,18 +33,11 @@ layout: default
       </h2>
       <div class="gallery-grid" id="galleryGrid">
         {% for item in page.gallery %}
-        <button
-          class="gallery-item"
-          data-src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}"
-          data-caption="{{ item.caption }}"
-          aria-label="Open image {{ forloop.index }}"
-          style="--i: {{ forloop.index0 }}"
-        >
-          <img
-            src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}"
-            alt="{{ item.caption | default: page.title }}"
-            loading="lazy"
-          />
+        <button class="gallery-item" data-src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}"
+          data-caption="{{ item.caption }}" aria-label="Open image {{ forloop.index }}"
+          style="--i: {{ forloop.index0 }}">
+          <img src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}" alt="{{ item.caption | default: page.title }}"
+            loading="lazy" />
           <div class="gallery-item-overlay">
             <span class="gallery-item-icon">⤢</span>
           </div>
@@ -67,9 +59,17 @@ layout: default
     {% endif %}
 
     <footer class="post-footer">
-      <a href="/portfolio" class="btn btn-outline post-back-link">
-        ← Back to Portfolio
-      </a>
+      <div class="post-footer-nav">
+        <a href="/portfolio" class="btn btn-outline post-back-link">← Back to Portfolio</a>
+
+        {% if page.next_post_url %}
+        <a href="{{ page.next_post_url }}" class="post-next-case">
+          <span class="post-next-label">Next case</span>
+          <span class="post-next-title">{{ page.next_post_title }}</span>
+          <span class="post-next-arrow" aria-hidden="true">→</span>
+        </a>
+        {% endif %}
+      </div>
     </footer>
   </div>
 </article>
