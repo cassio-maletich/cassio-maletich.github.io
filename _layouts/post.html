@@ -26,6 +26,46 @@ layout: default
       {{ content }}
     </div>
 
+    {% if page.gallery %}
+    <section class="post-gallery">
+      <h2 class="gallery-heading">
+        <span class="gallery-heading-label">Project Showcase</span>
+        <span class="gallery-count">{{ page.gallery | size }} images</span>
+      </h2>
+      <div class="gallery-grid" id="galleryGrid">
+        {% for item in page.gallery %}
+        <button
+          class="gallery-item"
+          data-src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}"
+          data-caption="{{ item.caption }}"
+          aria-label="Open image {{ forloop.index }}"
+          style="--i: {{ forloop.index0 }}"
+        >
+          <img
+            src="/assets/img/{{ page.gallery_dir }}/{{ item.file }}"
+            alt="{{ item.caption | default: page.title }}"
+            loading="lazy"
+          />
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-icon">⤢</span>
+          </div>
+        </button>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
+      <div class="lightbox-stage">
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+      </div>
+    </div>
+    {% endif %}
+
     <footer class="post-footer">
       <a href="/portfolio" class="btn btn-outline post-back-link">
         ← Back to Portfolio

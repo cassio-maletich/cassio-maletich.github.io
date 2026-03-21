@@ -158,3 +158,106 @@ document.addEventListener("DOMContentLoaded", () => {
     onDragEnd();
   });
 });
+
+// ─── GALLERY LIGHTBOX ────────────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightboxImg");
+  const lbCaption = document.getElementById("lightboxCaption");
+  const lbClose = document.getElementById("lightboxClose");
+  const lbPrev = document.getElementById("lightboxPrev");
+  const lbNext = document.getElementById("lightboxNext");
+  const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+
+  if (!lightbox || galleryItems.length === 0) return;
+
+  let current = 0;
+  let isAnimating = false;
+
+  // direction: +1 = forward (→), -1 = backward (←), 0 = first open
+  const show = (index, direction = 0) => {
+    if (isAnimating) return;
+    const next = (index + galleryItems.length) % galleryItems.length;
+    if (next === current && !lightbox.hidden) return;
+
+    const src = galleryItems[next].dataset.src;
+    const caption = galleryItems[next].dataset.caption;
+
+    if (direction !== 0 && !lightbox.hidden) {
+      // → slides current out LEFT, new image in from RIGHT
+      // ← slides current out RIGHT, new image in from LEFT
+      const outClass = direction > 0 ? "lb-slide-out-left" : "lb-slide-out-right";
+      const inClass  = direction > 0 ? "lb-slide-in-right" : "lb-slide-in-left";
+
+      isAnimating = true;
+      lbImg.classList.add(outClass);
+
+      // Preload next image in parallel with out-animation
+      const preload = new Image();
+      preload.onload = () => {
+        lbImg.addEventListener("animationend", () => {
+          lbImg.classList.remove(outClass);
+          lbImg.src = src;
+          lbImg.alt = caption || "";
+          lbCaption.textContent = caption || "";
+          lbImg.classList.add(inClass);
+          lbImg.addEventListener("animationend", () => {
+            lbImg.classList.remove(inClass);
+            isAnimating = false;
+          }, { once: true });
+        }, { once: true });
+      };
+      preload.onerror = () => { isAnimating = false; };
+      preload.src = src;
+    } else {
+      // First open — no slide, just crossfade
+      lbImg.classList.add("is-loading");
+      const preload = new Image();
+      preload.onload = () => {
+        lbImg.src = src;
+        lbImg.alt = caption || "";
+        lbImg.classList.remove("is-loading");
+      };
+      preload.src = src;
+      lbCaption.textContent = caption || "";
+    }
+
+    current = next;
+  };
+
+  const open = (index) => {
+    show(index, 0);
+    lightbox.hidden = false;
+    lightbox.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    lbClose.focus();
+  };
+
+  const close = () => {
+    lightbox.hidden = true;
+    lightbox.classList.remove("is-open");
+    document.body.style.overflow = "";
+    galleryItems[current].focus();
+  };
+
+  galleryItems.forEach((item, i) => {
+    item.addEventListener("click", () => open(i));
+  });
+
+  lbClose.addEventListener("click", close);
+  lbPrev.addEventListener("click", () => show(current - 1, -1));
+  lbNext.addEventListener("click", () => show(current + 1, +1));
+
+  // Close on backdrop click (outside stage)
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(current - 1, -1);
+    if (e.key === "ArrowRight") show(current + 1, +1);
+  });
+});

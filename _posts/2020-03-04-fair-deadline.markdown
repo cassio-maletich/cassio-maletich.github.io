@@ -3,6 +3,11 @@ layout: post
 title: "Leading the Development of a Native App for a Trade Fair"
 date: 2020-03-04 12:34:56 -0300
 categories: portfolio
+gallery_dir: posts/2020-03-04
+gallery:
+  - { file: "1.png", caption: "" }
+  - { file: "2.jpg", caption: "" }
+  - { file: "3.jpg", caption: "" }
 ---
 
 # The Fair Deadline.

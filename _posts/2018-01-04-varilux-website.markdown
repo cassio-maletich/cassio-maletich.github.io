@@ -3,6 +3,13 @@ layout: post
 title: "First Technical Leading Project"
 date: 2018-01-04 12:34:56 -0300
 categories: portfolio
+gallery_dir: posts/2018-01-04
+gallery:
+  - { file: "1.png", caption: "" }
+  - { file: "2.png", caption: "" }
+  - { file: "3.jpg", caption: "" }
+  - { file: "4.jpg", caption: "" }
+  - { file: "5.jpg", caption: "" }
 ---
 
 # Head first.

@@ -3,6 +3,14 @@ layout: post
 title: "The Native App Project"
 date: 2019-01-04 12:34:56 -0300
 categories: portfolio
+gallery_dir: posts/2019-01-04
+gallery:
+  - { file: "1.jpg", caption: "" }
+  - { file: "2.jpg", caption: "" }
+  - { file: "3.jpg", caption: "" }
+  - { file: "4.jpg", caption: "" }
+  - { file: "5.jpg", caption: "" }
+  - { file: "6.jpg", caption: "" }
 ---
 
 # Actions speak louder than words.
