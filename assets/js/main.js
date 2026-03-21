@@ -22,8 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const tick = () => {
     currentX = lerp(currentX, targetX, 0.07);
     currentY = lerp(currentY, targetY, 0.07);
-    dragX = lerp(dragX, dragTargetX, isDragging ? 0.85 : 0.08); // fast on drag, springy on release
+    dragX = lerp(dragX, dragTargetX, isDragging ? 0.85 : 0.08);
     dragY = lerp(dragY, dragTargetY, isDragging ? 0.85 : 0.08);
+
+    // Once spring-back has settled, release the elevated z-index
+    if (!isDragging && wrapper.style.zIndex === "10") {
+      if (Math.abs(dragX) < 0.5 && Math.abs(dragY) < 0.5) {
+        wrapper.style.zIndex = "";
+      }
+    }
 
     // 3D tilt + drag offset combined
     wrapper.style.transform = `
@@ -111,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     targetX = 0;
     targetY = 0;
     wrapper.style.cursor = "grab";
-    wrapper.style.zIndex = "";
+    // z-index is cleared inside tick() once the spring-back settles
   };
 
   // ─── Mouse events ─────────────────────────────────────────────────────────
